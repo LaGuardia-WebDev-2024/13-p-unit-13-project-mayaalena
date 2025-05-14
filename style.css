@@ -1,17 +1,24 @@
-#movie-result {
-  background: rgb(244, 98, 181);
+#flower-result {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 500px;
+  background: rgb(175, 241, 249 );
   border: 5px solid black;
   font-size: 24px;
-  height: 160px;
+  min-height: 200px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-#book-result {
+#trip-result {
   background: rgb(196, 159, 255);
   border: 5px solid black;
+  border-radius: 25px;
+  padding: 20px;
+  width: 500px;
   font-size: 24px;
-  height: 160px;
+ min-height: 200px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -19,4 +26,27 @@
 hr {
   height: 5px;
   background-color: black;
+}
+html{
+  width:80%;
+  margin:auto;
+}
+
+h1{
+   font-family: "Playwrite DK Loopet", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  color: rgb(255, 104, 189 )
+ }
+
+body{
+  background: url('https://i.etsystatic.com/27701696/r/il/96db87/3322448291/il_570xN.3322448291_ciai.jpg')
+}
+
+h2{
+  color:rgb(252, 247, 108 );
+  font-family:"Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
