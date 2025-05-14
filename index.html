@@ -19,67 +19,121 @@ Select ONE Additional Feature to Add
     <meta charset="utf-8" />
     <title>Unit 13 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&family=Shadows+Into+Light&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About Maya</h1>
     <hr />
     <!-- Movie Question -->
-    <form id="movie-form">
+    <form id="flower-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        <h2>
+          🌸 What is my favorite flower?
+        </h2>
+        <select id="flower-answer">
+          <option value="flower1">Lotus</option>
+          <option value="flower2">Peony</option>
+          <option value="flower3">Lavender</option>
+          <option value="flower4">Tulip</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Let's see!</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="flower-result">
+    <p id="fresult">
+      
+      </p>
+    </div>
+  
     <hr />
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="trip-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+       <h2>
+          ✈️ What is my dream destination?
+        </h2>
+        <select id="trip-answer">
+          <option value="trip1">London</option>
+          <option value="trip2">Thailand</option>
+          <option value="trip3">Aruba</option>
+          <option value="trip4">Italy</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="trip-result">
+    
+    <p id= "gresult">
+    
+      </p>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+       var flowerImages = {
+        flower1:
+          "https://dharmacrafts.com/cdn/shop/articles/flower-3093072_1280.jpg?v=1622136640&width=1100",
+        flower2: "https://fiftyflowers.com/cdn/shop/files/pink-peony-wholesale-flowers-stem_d55f3.webp?v=1687543130&width=800",
+        flower3: "https://www.plantingtree.com/cdn/shop/products/lavendar2_600x600.jpg?v=1683816808",
+         flower4: "https://www.colorblends.com/wp-content/uploads/2020/01/1411_FrenchBlendRose_PEH1359sq-1024x1024.jpg",
+      };
       //Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      $("#flower-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#flower-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "flower3") {
+          $("#fresult").text("YESSSS!");
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#fresult").text("Try Again!");
         }
+        
+        
+         var $img = $("<img>");
+        $img.width(100);
+        $img.attr("src", flowerImages[answer]);
+        $img.appendTo("#flower-result").hide().show(2000);
+        
+  
+        
+        
       });
 
       //Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      $("#trip-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#trip-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        if (answer === "trip2") {
+          $("#gresult").text("YESSSS!");
         } else {
-          $("#book-result").text("Try Again!");
+          $("#gresult").text("Try Again!");
+          
+        
         }
+        
+             var tripImages = {
+            trip1: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/London_Big_Ben_Phone_box.jpg/960px-London_Big_Ben_Phone_box.jpg",
+            trip2: "https://lp-cms-production.imgix.net/2024-10/-CantoiStock-1299735828.jpg?auto=compress&format=auto&fit=crop&q=50&w=1200&h=800",
+            trip3:"https://cdn.britannica.com/18/93918-050-3F5DC9F5/Yachts-Palm-Beach-Aruba.jpg",
+            trip4: "https://www.onthegotours.com/repository/Cinque-Terra--Best-places-to-visit-in-Italy--On-The-Go-Tours-352391500906401.jpg",
+          };
+                        
+          var $img = $("<img>");
+        $img.width(100);
+        $img.attr("src", tripImages[answer]);
+        $img.appendTo("#trip-result").hide().show(2000);
+        
+        
+     
       });
     </script>
   </body>
